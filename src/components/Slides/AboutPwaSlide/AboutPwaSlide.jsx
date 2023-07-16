@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./AboutPwaSlide.module.css";
 
-const AboutPwaSlide = () => {
+const AboutPwaSlide = ({ onNext }) => {
   return (
     <div className={styles.slide}>
       <p className={styles.description}>
@@ -15,6 +15,10 @@ const AboutPwaSlide = () => {
         preferences or the specific theme you want. Feel free to modify the
         questions and make it about whatever you like!
       </p>
+
+      <button className={styles.submitButton} onClick={onNext}>
+        Next
+      </button>
     </div>
   );
 };

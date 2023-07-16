@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./QuestionTenSlide.module.css";
 
-const QuestionTenSlide = () => {
+const QuestionTenSlide = ({ onNext, handleAnswerSubmit }) => {
   const [answer, setAnswer] = useState("");
 
   const handleInputChange = (event) => {
@@ -10,6 +10,10 @@ const QuestionTenSlide = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    handleAnswerSubmit(answer, "compilation");
+
+    onNext();
     // Handle the submitted answer here
   };
 
@@ -27,7 +31,7 @@ const QuestionTenSlide = () => {
           onChange={handleInputChange}
         />
         <button type="submit" className={styles.submitButton}>
-          Next
+          Check Result
         </button>
       </form>
     </div>
