@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import styles from "./QuestionTenSlide.module.css";
+import SlideContainer from "../../SlideContainer/SlideContainer";
+import Question from "../../Question/Question";
+import Input from "../../Input/Input";
+import Label from "../../Label/Label";
+import Button from "../../Button/Button";
 
 const QuestionTenSlide = ({ onNext, handleAnswerSubmit }) => {
   const [answer, setAnswer] = useState("");
@@ -18,23 +23,21 @@ const QuestionTenSlide = ({ onNext, handleAnswerSubmit }) => {
   };
 
   return (
-    <div className={styles.slide}>
-      <p className={styles.question}>
+    <SlideContainer>
+      <Question>
         The process of converting a high-level programming language into machine
         code is called ________.
-      </p>
-      <form onSubmit={handleSubmit}>
-        <input
-          className={styles.input}
-          type="text"
-          value={answer}
-          onChange={handleInputChange}
-        />
-        <button type="submit" className={styles.submitButton}>
-          Check Result
-        </button>
-      </form>
-    </div>
+      </Question>
+
+      <Label htmlFor="answer">Answer</Label>
+      <Input
+        id="answer"
+        type="text"
+        value={answer}
+        onChange={handleInputChange}
+      />
+      <Button onClick={handleSubmit}>Check Result</Button>
+    </SlideContainer>
   );
 };
 

@@ -1,25 +1,23 @@
 import React from "react";
 import styles from "./AboutPwaSlide.module.css";
+import SlideContainer from "../../SlideContainer/SlideContainer";
+import Button from "../../Button/Button";
 
 const AboutPwaSlide = ({ onNext }) => {
   return (
-    <div className={styles.slide}>
+    <SlideContainer>
       <p className={styles.description}>
-        Welcome to the Random Questions PWA! This Progressive Web App (PWA) is
-        designed to provide you with a fun and interactive quiz experience. It
-        presents a series of random questions, allowing you to test your
-        knowledge on various topics.
+        Welcome to Summer Hackathon PWA! This Progressive Web App (PWA) is a fun
+        and interactive quiz experience.
       </p>
-      <p className={styles.note}>
-        Note: You have the flexibility to customize the questions to suit your
-        preferences or the specific theme you want. Feel free to modify the
-        questions and make it about whatever you like!
+      <p className={styles.description}>
+        Note: Customize the questions to suit your preferences or specific
+        themes. Feel free to modify the code and make it about whatever you
+        like!
       </p>
 
-      <button className={styles.submitButton} onClick={onNext}>
-        Next
-      </button>
-    </div>
+      <Button onClick={onNext}>Next</Button>
+    </SlideContainer>
   );
 };
 

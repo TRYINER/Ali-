@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import styles from "./QuestionEightSlide.module.css";
+import SlideContainer from "../../SlideContainer/SlideContainer";
+import Question from "../../Question/Question";
+import Input from "../../Input/Input";
+import Label from "../../Label/Label";
+import Button from "../../Button/Button";
 
 const QuestionEightSlide = ({ onNext, handleAnswerSubmit }) => {
   const [answer, setAnswer] = useState("");
@@ -14,24 +19,20 @@ const QuestionEightSlide = ({ onNext, handleAnswerSubmit }) => {
     handleAnswerSubmit(answer, "6");
 
     onNext();
-    // Handle the submitted answer here
   };
 
   return (
-    <div className={styles.slide}>
-      <p className={styles.question}>Solve for x: 2x - 3 = 9.</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          className={styles.input}
-          type="number"
-          value={answer}
-          onChange={handleInputChange}
-        />
-        <button type="submit" className={styles.submitButton}>
-          Next
-        </button>
-      </form>
-    </div>
+    <SlideContainer>
+      <Question className={styles.question}>Solve for x: 2x - 3 = 9.</Question>
+      <Label htmlFor="answer">Answer</Label>
+      <Input
+        id="answer"
+        type="number"
+        value={answer}
+        onChange={handleInputChange}
+      />
+      <Button onClick={handleSubmit}>Next</Button>
+    </SlideContainer>
   );
 };
 

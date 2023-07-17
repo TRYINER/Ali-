@@ -1,5 +1,10 @@
 import React, { useState } from "react";
+
+import SlideContainer from "../../SlideContainer/SlideContainer";
+import Button from "../../Button/Button";
 import styles from "./QuestionTwoSlide.module.css";
+import Question from "../../Question/Question";
+import RadioInput, { RadioContainer } from "../../RadioInput/RadioInput";
 
 const QuestionTwoSlide = ({ onNext, handleAnswerSubmit }) => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -16,50 +21,43 @@ const QuestionTwoSlide = ({ onNext, handleAnswerSubmit }) => {
   };
 
   return (
-    <div className={styles.slide}>
-      <p className={styles.question}>What is the chemical symbol for gold?</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
-            type="radio"
-            value="a"
-            checked={selectedOption === "a"}
-            onChange={handleOptionChange}
-          />
+    <SlideContainer>
+      <Question className={styles.question}>
+        What is the chemical symbol for gold?
+      </Question>
+      <RadioContainer>
+        <RadioInput
+          value="a"
+          checked={selectedOption === "a"}
+          onChange={handleOptionChange}
+        >
           Au
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="b"
-            checked={selectedOption === "b"}
-            onChange={handleOptionChange}
-          />
+        </RadioInput>
+        <RadioInput
+          value="b"
+          checked={selectedOption === "b"}
+          onChange={handleOptionChange}
+        >
           Ag
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="c"
-            checked={selectedOption === "c"}
-            onChange={handleOptionChange}
-          />
+        </RadioInput>
+        <RadioInput
+          value="c"
+          checked={selectedOption === "c"}
+          onChange={handleOptionChange}
+        >
           Fe
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="d"
-            checked={selectedOption === "d"}
-            onChange={handleOptionChange}
-          />
+        </RadioInput>
+        <RadioInput
+          value="d"
+          checked={selectedOption === "d"}
+          onChange={handleOptionChange}
+        >
           Hg
-        </label>
-        <button type="submit" className={styles.submitButton}>
-          Next
-        </button>
-      </form>
-    </div>
+        </RadioInput>
+      </RadioContainer>
+
+      <Button onClick={handleSubmit}>Next</Button>
+    </SlideContainer>
   );
 };
 

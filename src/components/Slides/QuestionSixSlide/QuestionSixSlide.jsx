@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import styles from "./QuestionSixSlide.module.css";
+import SlideContainer from "../../SlideContainer/SlideContainer";
+import Question from "../../Question/Question";
+import RadioInput, { RadioContainer } from "../../RadioInput/RadioInput";
+import Button from "../../Button/Button";
 
 const QuestionSixSlide = ({ onNext, handleAnswerSubmit }) => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -14,56 +18,48 @@ const QuestionSixSlide = ({ onNext, handleAnswerSubmit }) => {
     handleAnswerSubmit(selectedOption, "b");
 
     onNext();
-    // Handle the submitted answer here
   };
 
   return (
-    <div className={styles.slide}>
-      <p className={styles.question}>
-        What is the largest planet in our solar system?
-      </p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
-            type="radio"
-            value="a"
-            checked={selectedOption === "a"}
-            onChange={handleOptionChange}
-          />
+    <SlideContainer>
+      <Question>What is the largest planet in our solar system?</Question>
+
+      <RadioContainer>
+        <RadioInput
+          value="a"
+          checked={selectedOption === "a"}
+          onChange={handleOptionChange}
+        >
           Earth
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="b"
-            checked={selectedOption === "b"}
-            onChange={handleOptionChange}
-          />
+        </RadioInput>
+
+        <RadioInput
+          value="b"
+          checked={selectedOption === "b"}
+          onChange={handleOptionChange}
+        >
           Jupiter
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="c"
-            checked={selectedOption === "c"}
-            onChange={handleOptionChange}
-          />
+        </RadioInput>
+
+        <RadioInput
+          value="c"
+          checked={selectedOption === "c"}
+          onChange={handleOptionChange}
+        >
           Mars
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="d"
-            checked={selectedOption === "d"}
-            onChange={handleOptionChange}
-          />
+        </RadioInput>
+
+        <RadioInput
+          value="d"
+          checked={selectedOption === "d"}
+          onChange={handleOptionChange}
+        >
           Saturn
-        </label>
-        <button type="submit" className={styles.submitButton}>
-          Next
-        </button>
-      </form>
-    </div>
+        </RadioInput>
+      </RadioContainer>
+
+      <Button onClick={handleSubmit}>Next</Button>
+    </SlideContainer>
   );
 };
 

@@ -1,9 +1,23 @@
 .container {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  padding: 0 1rem;
+  background-image: linear-gradient(
+    to bottom,
+    #7da3ba,
+    #7398ae,
+    #688ca2,
+    #5e8196,
+    #54768a,
+    #4c6c80,
+    #446375,
+    #3c596b,
+    #344f60,
+    #2b4555,
+    #233b4a,
+    #1b3240
+  );
 }

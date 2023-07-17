@@ -47,76 +47,76 @@ const App = () => {
 
   return (
     <Slider ref={sliderRef} {...settings}>
-      <div>
+      <Layout>
         <IntroductionSlide onNext={next} setUser={setUser} />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <AboutPwaSlide onNext={next} />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionOneSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionTwoSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionThreeSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionFourSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionFiveSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionSixSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionSevenSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionEightSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionNineSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
-      <div>
+      </Layout>
+      <Layout>
         <QuestionTenSlide
           onNext={next}
           handleAnswerSubmit={handleAnswerSubmit}
         />
-      </div>
+      </Layout>
 
-      <div>
+      <Layout>
         <ResultSlide answers={answers} user={user} />
-      </div>
+      </Layout>
     </Slider>
   );
 };

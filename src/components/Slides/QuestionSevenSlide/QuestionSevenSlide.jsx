@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import styles from "./QuestionSevenSlide.module.css";
+import SlideContainer from "../../SlideContainer/SlideContainer";
+import Question from "../../Question/Question";
+import Label from "../../Label/Label";
+import Input from "../../Input/Input";
+import Button from "../../Button/Button";
 
 const QuestionSevenSlide = ({ onNext, handleAnswerSubmit }) => {
   const [answer, setAnswer] = useState("");
@@ -14,26 +19,19 @@ const QuestionSevenSlide = ({ onNext, handleAnswerSubmit }) => {
     handleAnswerSubmit(answer, "yellow");
 
     onNext();
-    // Handle the submitted answer here
   };
 
   return (
-    <div className={styles.slide}>
-      <p className={styles.question}>
+    <SlideContainer>
+      <Question>
         The primary colors in painting are red, blue, and ________.
-      </p>
-      <form onSubmit={handleSubmit}>
-        <input
-          className={styles.input}
-          type="text"
-          value={answer}
-          onChange={handleInputChange}
-        />
-        <button type="submit" className={styles.submitButton}>
-          Next
-        </button>
-      </form>
-    </div>
+      </Question>
+
+      <Label htmlFor="answer">Answer</Label>
+
+      <Input type="text" value={answer} onChange={handleInputChange} />
+      <Button onClick={handleSubmit}>Next</Button>
+    </SlideContainer>
   );
 };
 

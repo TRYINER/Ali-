@@ -1,3 +1,6 @@
+import styles from "./ResultSlide.module.css";
+import SlideContainer from "../../SlideContainer/SlideContainer";
+
 const ResultSlide = ({ answers, user }) => {
   const calculateScore = () => {
     const totalQuestions = answers.length;
@@ -28,20 +31,18 @@ const ResultSlide = ({ answers, user }) => {
   };
 
   return (
-    <div>
-      <h2>{user && user.name} your result</h2>
-      <p>{generateFriendlyMessage()}</p>
+    <SlideContainer>
+      <h2 className={styles.title}>{user && user.name} your result</h2>
+      <p className={styles.description}>{generateFriendlyMessage()}</p>
       <ul>
         {answers.map((answerObj, index) => (
           <li key={index}>
             Question {index + 1}:{" "}
-            {answerObj.answer === answerObj.correctAnswer
-              ? "Correct"
-              : "Incorrect"}
+            {answerObj.answer === answerObj.correctAnswer ? "✅" : "❌"}
           </li>
         ))}
       </ul>
-    </div>
+    </SlideContainer>
   );
 };
 

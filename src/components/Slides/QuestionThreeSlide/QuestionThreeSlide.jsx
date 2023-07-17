@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import styles from "./QuestionThreeSlide.module.css";
+import SlideContainer from "../../SlideContainer/SlideContainer";
+import Question from "../../Question/Question";
+import Input from "../../Input/Input";
+import Button from "../../Button/Button";
+import Label from "../../Label/Label";
 
 const QuestionThreeSlide = ({ onNext, handleAnswerSubmit }) => {
   const [answer, setAnswer] = useState("");
@@ -17,20 +22,17 @@ const QuestionThreeSlide = ({ onNext, handleAnswerSubmit }) => {
   };
 
   return (
-    <div className={styles.slide}>
-      <p className={styles.question}>Solve for x: 3x + 7 = 22.</p>
-      <form onSubmit={handleSubmit}>
-        <input
-          className={styles.input}
-          type="number"
-          value={answer}
-          onChange={handleInputChange}
-        />
-        <button type="submit" className={styles.submitButton}>
-          Next
-        </button>
-      </form>
-    </div>
+    <SlideContainer>
+      <Question>Solve for x: 3x + 7 = 22.</Question>
+      <Label htmlFor="answer">Answer</Label>
+      <Input
+        id="answer"
+        type="number"
+        value={answer}
+        onChange={handleInputChange}
+      />
+      <Button onClick={handleSubmit}>Next</Button>
+    </SlideContainer>
   );
 };
 

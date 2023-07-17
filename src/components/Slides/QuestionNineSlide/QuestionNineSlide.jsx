@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import styles from "./QuestionNineSlide.module.css";
+import SlideContainer from "../../SlideContainer/SlideContainer";
+import Question from "../../Question/Question";
+import RadioInput, { RadioContainer } from "../../RadioInput/RadioInput";
+import Button from "../../Button/Button";
 
 const QuestionNineSlide = ({ onNext, handleAnswerSubmit }) => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -14,54 +18,49 @@ const QuestionNineSlide = ({ onNext, handleAnswerSubmit }) => {
     handleAnswerSubmit(selectedOption, "a");
 
     onNext();
-    // Handle the submitted answer here
   };
 
   return (
-    <div className={styles.slide}>
-      <p className={styles.question}>Who wrote the play "Romeo and Juliet"?</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
-            type="radio"
-            value="a"
-            checked={selectedOption === "a"}
-            onChange={handleOptionChange}
-          />
+    <SlideContainer>
+      <Question>Who wrote the play "Romeo and Juliet"?</Question>
+
+      <RadioContainer>
+        <RadioInput
+          id="a"
+          value="a"
+          checked={selectedOption === "a"}
+          onChange={handleOptionChange}
+        >
           William Shakespeare
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="b"
-            checked={selectedOption === "b"}
-            onChange={handleOptionChange}
-          />
+        </RadioInput>
+        <RadioInput
+          id="b"
+          value="b"
+          checked={selectedOption === "b"}
+          onChange={handleOptionChange}
+        >
           Oscar Wilde
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="c"
-            checked={selectedOption === "c"}
-            onChange={handleOptionChange}
-          />
+        </RadioInput>
+        <RadioInput
+          id="c"
+          value="c"
+          checked={selectedOption === "c"}
+          onChange={handleOptionChange}
+        >
           Jane Austen
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="d"
-            checked={selectedOption === "d"}
-            onChange={handleOptionChange}
-          />
+        </RadioInput>
+        <RadioInput
+          id="d"
+          value="d"
+          checked={selectedOption === "d"}
+          onChange={handleOptionChange}
+        >
           Charles Dickens
-        </label>
-        <button type="submit" className={styles.submitButton}>
-          Next
-        </button>
-      </form>
-    </div>
+        </RadioInput>
+      </RadioContainer>
+
+      <Button onClick={handleSubmit}>Next</Button>
+    </SlideContainer>
   );
 };
 

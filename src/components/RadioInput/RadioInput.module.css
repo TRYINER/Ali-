@@ -1,0 +1,32 @@
+.input {
+  display: none;
+}
+
+.label {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  width: 120px;
+  height: 60px;
+  box-sizing: border-box;
+  color: #233b4a;
+  font-size: 1.1rem;
+}
+
+.labelChecked {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #233b4a;
+  width: 120px;
+  height: 60px;
+  box-sizing: border-box;
+  color: #233b4a;
+  font-size: 1.1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
